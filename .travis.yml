@@ -1,0 +1,10 @@
+language: php
+php:
+    - '7.2'
+install:
+    - composer require squizlabs/php_codesniffer
+script:
+    - vendor/bin/phpcs --standard=PSR2 src/
+notifications:
+    email:
+        - aurelien@wildcodeschool.fr

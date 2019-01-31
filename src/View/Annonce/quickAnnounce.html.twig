@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} Annonces {% endblock %}
+{% block content %}
+    {% block search %}{% include 'Annonce/search.html.twig' %}{% endblock %}
+    <!-- Announces start -->
+    <div class="row justify-content-center">
+        {% for announce in announces %}
+            <div class="card col-md-3 offset-1 cardAnnounce">
+                <img class="card-img-top" src="/uploads/{{ announce.img }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ announce.title }}</h5>
+                    <p class="priceShow card-text">Ville :{{ announce.city }}</p>
+                    <p class="card-text">{{ announce.content }}</p>
+                    <p>Capacité : {{ announce.capacity }} personnes .</p>
+                    <p class="priceAnnounce card-text">Prix : {{ announce.price }} € TTC</p>
+                    <p class="priceShow card-text">Type de bien : {{ announce.good }}</p>
+                    <p class="priceShow card-text">Ce bien est fait pour : {{ announce.activity }}</p>
+                    <div class="row justify-content-center buttonBG">
+                        {% if session.user is not empty %}
+                            <a class="textButtonBG" href="/announce/showAnnounce/{{ announce.id }}"
+                               role="button">Voir
+                                l'annonce</a>
+                        {% else %}
+                            <a class="textButtonBG" href="/announce/showAnnounce/{{ announce.id }}"
+                               role="button" data-toggle="modal" data-target="#signinModal">Voir
+                                l'annonce</a>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="signinModal" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel"><strong>Vous n'êtes pas
+                                                    connecté</strong>
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Pour profiter pleinement de nos services et de notre communauté, veuillez
+                                            vous connecter
+                                            ou créer un compte.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a class="btn btn-secondary" href="/inscription" role="button">Créer un
+                                                compte.</a>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                    data-target="#connectModal"
+                                                    data-dismiss="modal">Se connecter
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <li>Nothing to display</li>
+        {% endfor %}
+    </div>
+
+{% endblock %}

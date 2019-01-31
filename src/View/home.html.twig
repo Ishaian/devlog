@@ -1,0 +1,83 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+    {{ message }}
+    <div class="fondCarou">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active fond">
+                    <img class="d-block w-100" src="/assets/images/celebration.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/assets/images/salle.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/assets/images/reunion.jpg" alt="Third slide">
+                </div>
+            </div>
+            <div class="jumbotron jumbo1" id="txtmedia">
+                <form method="get" action="/quickAnnounce">
+                    <div class="form-row">
+                        <div class="col-md-6" id="txtmedia1">
+                            <h2>Vous n'avez pas de compte?</h2>
+                            <h2>Faites une recherche rapide pour connaitre les lieux de votre
+                                ville!</h2>
+                        </div>
+                        <div class="col-md-4">
+                            <br>
+                            <input type="text" name='city' class="form-control" placeholder="Recherche rapide par ville">
+                        </div>
+                        <div class="col-md-2">
+                            <br>
+                            <button type="submit" class="btn btn-secondary btn-outline-light" id="searchCity">Rechercher</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="jumbotron jumbo2" id="txtmedia2">
+            <div class="row">
+                <div class="col-md-4">
+                    <div id=" about us" class="container-fluid">
+                        <h1 class="titleJumbo2">Notre concept</h1>
+                        <p class="txtJumbo2">Sortir des circuits classiques de location de lieux pour chaque
+                            événement.</p>
+                        <p class="txtJumbo2">Qu'ils soient privés ou associatifs, il est fréquent de trouver une grande
+                            diversité de lieux qui
+                            sont rarement utlisés: appartements, jardins, salles de réunions ou polyvalentes, salle de
+                            répétition ...
+                            Pourtant, une demande existe pour des événements ponctuels dont le public souhaite sortir
+                            des
+                            lieux habituels dédiés à l'événementiel.</p>
+
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-md-4">
+                    <h1 class="titleJumbo2">SOS'Projet</h1>
+                    <p class="txtJumbo2">Vous permet de publier ces lieux, nous les répertorions, mettons en contact
+                        les annonceurs et
+                        utilsateurs, et facilitons les locations.</p>
+                    <div class="row justify-content-md-center">
+                        <img class="peopleImg" src="/assets/images/people.png" alt="icone People">
+                    </div>
+
+                </div>
+                <br>
+                <br>
+                <div class="col-md-4">
+                    <h1 class="titleJumbo2">Qui sommes nous?</h1>
+                    <p class="txtJumbo2">Une entreprise jeune et sur un format start'up, nous sommes implantés à
+                        l'incubateur "innovation
+                        numérique" depuis 2017.</p>
+                    <p class="txtJumbo2">Nous privilégions un travail avec les acteurs de proximité et nous croyons en
+                        un réseau
+                        favorisant l'échange, les interconnexions et la mutualisation .</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

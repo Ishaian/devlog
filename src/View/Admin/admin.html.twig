@@ -1,0 +1,50 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} Page Administrateur {% endblock %}
+{% block content %}
+    <div class="container admin">
+        <div class="row backAdmin">
+            <h2>Page Administrateur</h2>
+            <table class="table adminTable">
+
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Numéro annonce</th>
+                    <th scope="col">Titre annonce</th>
+                    <th scope="col">contenu annonce</th>
+                    <th scope="col">Prix</th>
+                    <th scope="col">capacité</th>
+                    <th scope="col">Modifier</th>
+                    <th scope="col">Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for announce in announces %}
+                    <tr>
+                        <td>{{ announce.id }}</td>
+                        <td>{{ announce.title }}</td>
+                        <td>{{ announce.content }}</td>
+                        <td>{{ announce.price }}</td>
+                        <td>{{ announce.capacity }}</td>
+                        <td><a href="/admin/edit/{{ announce.id }}" class="btn btn-dark btn-md">Modifier</a></td>
+                        <td><a href="/admin/delete/{{ announce.id }}" onclick="spprOk()" class="btn btn-dark btn-md">Supprimer</a>
+                        </td>
+                    </tr>
+                    <script>
+                        function spprOk() {
+                            if (confirm('Suppression effectuée')) {
+                            }
+                        }
+                    </script>
+                    {% else %}
+                    <li>Nothing to display</li>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+
+

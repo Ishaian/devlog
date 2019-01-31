@@ -1,0 +1,65 @@
+<form method="get" action="/searchAnnounce">
+    <div class="jumbotron jumboSearch">
+        <div class="row justify-content-center announceTitle">
+            <h1 class="titleSearch"><strong>Trouvez votre lieu</strong></h1>
+        </div>
+        <br/>
+        <div class="row justify-content-md-center">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="labelSearch" for="good">Bien à louer</label>
+                    <select class="form-control" name="good" id="good">
+                        <option selected disabled>Choisissez un type de bien</option>
+                        <option value="Maison">Maison</option>
+                        <option value="Appartement">Appartement</option>
+                        <option value="Bureau">Bureau</option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Musique">Salle de musique</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="labelSearch" for="city">Ville</label>
+                    <input type="text" name="city" class="form-control" id="city"
+                           placeholder="Ville">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="labelSearch" for="capacity">Nombre de personnes</label>
+                    <input class="form-control" type="text" name="capacity" id="capacity" placeholder="5"
+                           pattern="\d{1,3}"/>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col-md-3">
+                <label class="labelSearch" for="price">Prix du bien pour une journée</label>
+                <input class="form-control" type="text" name="price" id="price" placeholder="150.00"
+                       pattern="\d+(\.\d{2})?"/>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="labelSearch" for="activity">Activité</label>
+                    <select class="form-control" name="activity" id="activity">
+                        <option selected disabled>Choissisez un type d'activité</option>
+                        <option value="Réunion">Réunion</option>
+                        <option value="intérieur">Rassemblement intérieur</option>
+                        <option value="extérieur">Rassemblement extérieur</option>
+                        <option value="Musique">Musique</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <label></label>
+                <button type="submit" value="submit" class="btn btn-outline-warning btn-lg searchButton">Rechercher</button>
+            </div>
+        </div>
+        <div class="row justify-content-md-center AnnulSearch">
+            <a href="/announce" class="btn btn-outline-light btn-lg">Annuler les filtres</a>
+        </div>
+    </div>
+</form>
+

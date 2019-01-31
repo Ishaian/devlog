@@ -1,0 +1,385 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+
+
+
+@font-face {
+ font-family: 'kaushan_scriptregular';
+ src: url(police/kaushanscript-regular-webfont.woff2) format('woff2'),
+ url('kaushanscript-regular-webfont.woff') format('woff');
+ font-weight: normal;
+ font-style: normal;
+}
+h1,h2
+{
+ font-family: 'kaushan_scriptregular';
+}
+h2
+{
+ font-size:25px;
+ color:white;
+}
+
+.nav-link{
+ font-size: 25px;
+ font-family: 'kaushan_scriptregular';
+}
+
+ .peopleImg{
+  width: 30%;
+  margin-top:4%;
+ }
+
+ .jumbo1 {
+
+  position: absolute;
+  top: 15%;
+  left: 35px;
+  right: 35px;
+  background: rgba(144, 12, 63, 0.7);
+  box-shadow: 3px 3px 3px black;
+  text-shadow: 1px 1px 2px black;
+ }
+
+.jumbo2 {
+
+ position: absolute;
+ top: 85%;
+ left: 35px;
+ right: 35px;
+ background: white;
+ opacity: 0.9;
+ box-shadow: 3px 3px 3px black;
+}
+
+.txtJumbo2{
+ text-align:left;
+ font-size : 110%
+}
+
+.titleJumbo2 {
+ text-align: center;
+ color: orangered;
+}
+
+.jumboSearch{
+ margin-top: 70px;
+ margin-bottom: 0px;
+ padding-bottom: 0px;
+ background-color: rgba(144, 12, 63, 1);
+ border-radius: 0px;
+}
+
+.titleSearch{
+ color: white;
+ text-shadow: 1px 1px 2px black;
+}
+
+.labelSearch{
+    margin-top: 10px;
+ color: white;
+ font-family: 'kaushan_scriptregular';
+ text-shadow: 1px 1px 2px black;
+    font-size: 130%;
+}
+
+.btn-lg{
+    margin-top: 0px;
+}
+
+.cardAnnounce {
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: 0%;
+    margin-right: 2%;
+    background-color: white;
+    border-radius: 0%;
+    border: 2px solid rgba(144, 12, 63, 1);
+    transition-duration: 0.2s;
+    box-shadow: 1px 1px 1px black;
+}
+.cardAnnounce:hover{
+margin-top:2%;
+margin-bottom:5%;
+margin-left: 0%;
+margin-right: 2%;
+background-color: white;
+border-radius: 0%;
+border: 5px solid rgba(144, 12, 63, 1);
+transition-duration: 0.2s;
+box-shadow: 7px 7px 7px lightslategrey;
+}
+
+.lienAnnonce{
+ background-color: rgba(144, 12, 63, 1);
+}
+
+.card-img-top {
+ margin-top:3%;
+ height: 400px;
+}
+
+.card-title{
+ font-family: 'kaushan_scriptregular';
+ font-size:230%;
+ text-shadow: 1px 1px 1px grey;
+}
+
+.card-text{
+ font-size: 130%;
+    padding: 2%;
+}
+
+.priceAnnounce{
+ font-size: 120%;
+    margin-right: 4%;
+}
+
+.txtfooter{
+    font-size:90%;
+}
+
+
+.titleForm{
+  margin-top:10%;
+  font-family: 'kaushan_scriptregular';
+  font-size:250%;
+  text-shadow:2px 2px 2px grey;
+}
+
+.backG {
+    background-color: rgba(144, 12, 63, 1);
+}
+
+.btn-group-lg > .btn, .btn-lg{
+    margin-top:2%;
+    margin-bottom:2%;
+}
+
+.jumboCard{
+    padding-top:2%;
+    margin-bottom:0px;
+    padding-bottom:0px;
+}
+
+.jumboShow{
+    margin-top:0px;
+    margin-bottom: 0px;
+}
+
+.priceShow{
+    margin-right:4%;
+}
+
+.apercu{
+    font-family: 'kaushan_scriptregular';
+    font-size:200%;
+    text-shadow: 2px 2px 2px black;
+}
+
+.buttonBG{
+ background-color: rgba(144, 12, 63, 1);
+ padding-bottom:5%;
+ box-shadow: 1px 1px 1px black;
+}
+
+.detailAnnounce{
+    padding-top:4%;
+    padding-left:0px;
+    padding-right:0px;
+    background-color:white;
+}
+
+.detailContent{
+    margin-top: 30px;
+}
+
+.textButtonBG{
+    margin-top: 4%;
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    font-family: 'kaushan_scriptregular';
+    font-size: 130%;
+}
+
+.textButtonBG:hover{
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    font-family: 'kaushan_scriptregular';
+}
+
+.detailPhoto{
+    border-radius:2%;
+    box-shadow: 1px 1px 1px black;
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right:4%;
+}
+
+.jumboDetail{
+    background-color: rgba(144, 12, 63, 1);
+    padding-bottom: 1%;
+    margin-bottom:4%;
+}
+
+.detailBG{
+    padding-left: 0px;
+
+}
+
+.detailTitle{
+    margin-bottom: 5%;
+    font-size: 500%;
+    font-family: 'kaushan_scriptregular';
+    color: white;
+    text-shadow: 3px 3px 3px black;
+
+}
+
+.detailText{
+    font-size: 150%;
+    font-style: italic;
+    margin-bottom: 7%;
+}
+
+.showBG{
+    margin-top: 5%;
+    margin-bottom: 0px;
+    background-color:rgba(144, 12, 63, 1);
+    border-radius: 0px;
+}
+
+.footAnnounce{
+    background-color:rgba(144, 12, 63, 1);
+    padding: 2%;
+}
+
+#mssgOk{
+    font-family: 'kaushan_scriptregular';
+    font-size:120%;
+    color: yellow;
+}
+
+.adminTable{
+    margin-top: 30px;
+}
+.admin h2{
+    margin-top: 120px;
+    color:black;
+    text-align: center;
+    font-size: 2em;
+}
+
+.backAdmin{
+    margin-bottom: 30%;
+}
+
+.modal-backdrop.show{
+    display: none;
+}
+
+.itemPointer{
+    cursor: pointer;
+}
+
+.connect{
+background-color: rgba(144, 12, 63, 1);
+box-shadow: 1px 1px 1px black;
+color: white;
+}
+
+.account{
+    padding-top: 5%;
+    padding-bottom: 15%;
+}
+
+.searchButton{
+    margin-top: 20%;
+}
+
+.btnAccount{
+    margin-bottom: 30%;
+}
+
+.errorSignin{
+    margin-top: 10px;
+    color: orange;
+    font-family: 'kaushan_scriptregular';
+    text-shadow: 1px 1px 2px black;
+    font-size: 130%;
+}
+@media all and (max-width: 900px) {
+ #logo {
+  height: 50px;
+ }
+ #txtmedia{
+  bottom: 0%;
+ }
+ #txtmedia1{
+  display: none;
+ }
+ #txtmedia2{
+  position: unset;
+  opacity: 1;
+  border-radius: unset;
+  box-shadow: none;
+ }
+ #searchCity{
+  margin-left: 30%;
+ }
+ .detailTitle{
+     font-size: 20px;
+     margin-top: 15%;
+ }
+ .peopleImg{
+     display: none;
+ }
+ .CGV{
+     font-size: 80%;
+ }
+ .filUp{
+     margin-left: 2%;
+ }
+ .addBtn{
+     margin-left: 35%;
+ }
+ .cardAnnounce{
+     margin-right: 0px;
+     border-color: white;
+ }
+ .AnnounceResponse{
+     padding-right: 0px;
+ }
+.AnnulSearch{
+  margin-left: 25%;
+}
+.searchButton{
+  margin-left:30%;
+}
+.detailTitle{
+  margin-left: 30%;
+}
+.detailBG{
+  padding-right: 0px;
+}
+.brand{
+ display: none;
+    }
+.titleForm{
+    font-size: 160%;
+    margin-top: 20%;
+}
+.cardAnnounce:hover{
+    box-shadow: none;
+    transition-duration: 120s;
+}
+
+}
+
+
+
+
+{% endblock %}

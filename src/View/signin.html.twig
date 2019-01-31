@@ -1,0 +1,84 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+    <div class="container backG">
+        <div class="form">
+
+            <div class="row justify-content-center">
+                <h2 class="titleForm"> Créez votre compte !</h2>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="errorSignin">
+                    {% for error in errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            </div>
+            <form method="post">
+
+                <div class=" row justify-content-md-center">
+                    <div class="col-md-7">
+                        <label class="labelSearch" for="firstname">Prénom</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname"
+                               placeholder="Prénom"
+                               required>
+                    </div>
+                </div>
+
+                <div class=" row justify-content-md-center">
+                    <div class="col-md-7">
+                        <label class="labelSearch" for="lastname">Nom</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nom"
+                               required>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center">
+                    <div class="col-md-7">
+                        <label class="labelSearch" for="pseudo">Pseudo</label>
+                        <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Pseudo">
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center">
+                    <div class="col-md-7">
+                        <label class="labelSearch" for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                               placeholder="contact@sosproject.fr"
+                               required>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-7">
+                        <label class="labelSearch" for="password">Mot de Passe</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                               required>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-7">
+                        <label class="labelSearch" for="password_confirm"> Confirmez Mot de Passe</label>
+                        <input type="password" class="form-control" id="password_confirm" name="password_confirm"
+                               required>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center filUp">
+                    <div>
+                        <input type="checkbox" id="scales" name="feature" value="scales" required/>
+                        <label class="labelSearch CGV" for="scales"> J'ai lu et
+                            accepte <a href="#" data-toggle="modal" data-target="#CDU">les mentions légales</a>
+                            relatives à la création et gestion de mon compte</label>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-7">
+                        <div class="row justify-content-center">
+                            <button type="submit" class="btn btn-outline-light btn-lg btnAccount">Envoyer</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

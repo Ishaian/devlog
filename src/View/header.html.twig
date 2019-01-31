@@ -1,0 +1,111 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/"><img id="logo" src="/assets/images/logo2.png" alt=logo></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="nav navbar-nav">
+            {% if session.user is not empty %}
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="/announce">Rechercher<span
+                                class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="/announce/add">Proposer</a>
+                </li>
+            {% else %}
+                <li class="nav-item active">
+                    <a class="nav-link text-white" data-toggle="modal" data-target="#signinModal"
+                       href="#">Rechercher<span
+                                class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#signinModal">Proposer</a>
+                </li>
+
+                <!-- Modal -->
+                <div class="modal fade" id="signinModal" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><strong>Vous n'êtes pas connecté</strong>
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Pour profiter pleinement de nos services et de notre communauté, veuillez vous connecter
+                                ou créer un compte.
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-secondary" href="/inscription" role="button">Créer un compte</a>
+                                <button type="button" class="btn connect" data-toggle="modal"
+                                        data-target="#connectModal"
+                                        data-dismiss="modal">Se connecter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            <li class="nav-item">
+                {% if session.user is not empty %}
+                    <a class="nav-link active itemPointer logout" href="/logout">
+                        Me déconnecter
+                    </a>
+                {% else %}
+                    <a class="nav-link text-white itemPointer" data-toggle="modal" data-target="#connectModal">
+                        Se connecter
+                    </a>
+                {% endif %}
+
+                <!-- Modal -->
+
+                <div class="modal fade" id="connectModal" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <form method="post" action="/connexion">
+                                <div class="modal-header">
+
+                                    <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+
+
+                                    <div class="form-group">
+                                        <label for="loginname" class="col-form-label">Identifiant:</label>
+                                        <input type="text" class="form-control" id="loginname" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="col-form-label">Mot de passe:</label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                    <button type="submit" class="btn connect">Se connecter</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% if session.user is empty %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/inscription">Créer un compte</a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} Mes Annonces {% endblock %}
+{% block search %}{% include'search.html.twig' %}{% endblock %}
+
+{% block content %}
+    <!-- Announces start -->
+    <div class="jumbotron showBG">
+        <div class="row justify-content-center">
+            <h2 class="apercu">Votre annonce !</h2>
+        </div>
+    </div>
+    <div class="jumbotron jumboShow">
+    <div class="row justify-content-center">
+        <div class="card col-md-4 cardAnnounce">
+            <img class="card-img-top" src="/uploads/{{ announce.img }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ announce.title }}</h5>
+                <br>
+                <p class="card-text">Ville : {{ announce.city }}</p>
+                <p class="card-text">{{ announce.content }}</p>
+                <p class="card-text">Capacité : {{ announce.capacity }} personnes</p>
+                <p class="priceShow card-text">Prix : {{ announce.price }} € TTC</p>
+                <p class="priceShow card-text">Type de bien : {{ announce.good }}</p>
+                <p class="priceShow card-text">Ce bien est fait pour : {{ announce.activity }}</p>
+                <div class="row justify-content-center">
+                    <a href="/announce/edit/{{ announce.id }}" class="btn btn-outline-dark btn-lg">Modifier</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="text-align: center">
+        <a href="/announce" class="btn btn-outline-dark btn-lg">Voir les autres annonces</a>
+    </div>
+    <div class="container" style="text-align: center">
+        <a href="/announce/delete/{{ announce.id }}" class="btn btn-outline-dark btn-lg">Supprimer mon annonce</a>
+    </div>
+
+
+{% endblock %}

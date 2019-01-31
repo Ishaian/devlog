@@ -1,0 +1,78 @@
+{% extends 'layout.html.twig' %}
+{% block title %} Edit{% endblock %}
+{% block content %}
+
+<div class="container backG">
+    <div class="form">
+        <br>
+        <h2 style="text-align: center;"> Je modifie mon annonce !</h2>
+        <br>
+        <hr>
+        <br>
+        <form method="post" enctype="multipart/form-data">
+            <br>
+            <div class=" row justify-content-md-center">
+                <div class="col-md-7">
+                    <label class="textstd" for="Titre de l'annonce">Titre de l'annonce</label>
+                    <input class="form-control" type="text" name="title" id="title" value="{{ announce.title }}"
+                           required/>
+                </div>
+            </div>
+            <br>
+            <div class=" row justify-content-md-center">
+                <div class="col-md-7">
+                    <label class="textstd" for="city">Ville</label>
+                    <input class="form-control" type="text" name="city" id="city" value=" {{ announce.city }}"
+                           required/>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-md-center">
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="content" rows="3"
+                                  required>{{ announce.content }}</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-7">
+                    <label class="textstd" for="Prix">Prix du bien pour une journée</label>
+                    <input class="form-control" type="text" name="price" id="price" value="{{ announce.price }}"
+                           pattern="[0-9 ]{1,}" required/>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-md-center">
+                <div class="col-md-7">
+                    <label class="textstd" for="capacity">{{capacityErr}}Nombre de personne</label>
+                    <input class="form-control" type="text" name="capacity" id="price" value="{{ announce.capacity }}"
+                           pattern="[0-9]" required/>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-md-center">
+                <input type="file" name="fichier" multiple="multiple" />
+            </div>
+            <br>
+            <div class="row justify-content-md-center">
+                <div>
+                    <input type="checkbox" id="scales" name="feature" value="scales" required/>
+                    <label class="textstd" for="conditionsDeVentes">J'ai lu et accepte les mentions légales
+                        relatives au dépot de mon annonce</label>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <input type="submit" class="btn btn-outline-warning btn-lg">
+
+            </div>
+            <a class="btn btn-primary" href="/announce/{{announce.id }}" role="button">Visualiser mon annonce</a>
+
+
+        </form>
+
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} Annonce {% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid detailBG">
+        <div class="jumbotron detailAnnounce">
+            <div class="jumbotron jumbotron jumboDetail">
+                <div class="row justify-content-md-center">
+                    <h3 class="detailTitle">{{ announce.title }}</h3>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                    <img class="detailPhoto" src="/uploads/{{ announce.img }}" alt="Card image cap">
+                </div>
+                <div class="col-md-5 offset-1 detailContent">
+                    <p class="detailText">Localisé à {{ announce.city }}</p>
+                    <p class="detailText">{{ announce.content }}</p>
+                    <p class="detailText">Prix par jour de <strong>{{ announce.price }}€ TTC</strong></p>
+                    <p class="detailText">Ce lieu peut accueillir {{ announce.capacity }} personnes </p>
+                    <button class="btn btn-dark btn-lg lienAnnonce" data-toggle="modal" data-target="#contactAnnounce">Prenons contact !</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center footAnnounce">
+        <a href="/announce" class="btn btn-outline-light btn-lg">Voir les autres annonces</a>
+    </div>
+
+<!-- Modal ContactAnnounce -->
+    <div class="modal fade" id="contactAnnounce" tabindex="-1" role="dialog" aria-labelledby="contactAnnounce" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Je souhaite réserver</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label>Veuillez contacter l'annonceur</label>
+                    <div class="row justify-content-md-center">
+                    <p id="Contactmail" aria-describedby="emailHelp">{{ owner.email}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

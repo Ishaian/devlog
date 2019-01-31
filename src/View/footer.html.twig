@@ -1,0 +1,57 @@
+<footer>
+    <div class="container-fluid width:100%">
+        <nav class="row nav bg-dark">
+            <div class="row justify-content-end">
+                <div class="col-md-3">
+                    <a href="" class="nav-link text-white" data-toggle="modal" data-target="#CDU">Terms of use</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="" class="nav-link text-white" data-toggle="modal" data-target="#Contact">Contact Us</a>
+                </div>
+                <div class="col-md-3 brand ">
+                    <div class="row">
+                        <a class="nav-item" href="#"><img class="img-fluid my-2 mx-2" src="/assets/images/twit.png"></a>
+                        <a class="nav-item" href="#"><img class="img-fluid my-2 mx-2" src="/assets/images/face.png"></a>
+                        <a class="nav-item" href="#"><img class="img-fluid my-2 mx-2"
+                                                          src="/assets/images/insta.png"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 brand">
+                    <h6 class="nav-link text-white "> Made with &#x2764;&#xFE0F; by DEVLOG</h6>
+                </div>
+            </div>
+        </nav>
+    </div>
+</footer>
+
+<!-- Modal Contact -->
+<div class="modal fade" id="Contact" tabindex="-1" role="dialog" aria-labelledby="Contact" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Contactez-nous</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label>Votre email</label>
+                <input type="email" class="form-control" id="Contactmail" aria-describedby="emailHelp"
+                       placeholder="contact@sosproject.fr" required>
+                <br>
+                <div class="form-group">
+                    <label for="Contactbox">Votre message</label>
+                    <textarea class="form-control" id="Contactbox" rows="3" required></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-info">Envoyer</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% include '_CDU.html.twig' %}
+
+
